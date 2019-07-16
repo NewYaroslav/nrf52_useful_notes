@@ -5,5 +5,6 @@
 
 ### Description
 ### Описание
-* To find out the possible causes of the hang, open the HANG.md file
+* To find out the possible causes of the hang, open the HANG.md file.
+
   Чтобы ознакомиться с возможными причинами зависаний, откройте файл HANG.md
