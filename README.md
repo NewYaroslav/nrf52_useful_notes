@@ -5,6 +5,10 @@
 
 ### Description
 ### Описание
-* To find out the possible causes of the hang, open the HANG.md file.
+* To find out the possible causes of the hang, open the HANGS.md file.
 
-  Чтобы ознакомиться с возможными причинами зависаний, откройте файл HANG.md
+  Чтобы ознакомиться с возможными причинами зависаний, откройте файл HANGS.md
+  
+* To view important commands for various utilities, open the COMMAND_LINE.md file
+
+  Чтобы ознакомиться с важными командами для различных утилит, откройте файл COMMAND_LINE.md
