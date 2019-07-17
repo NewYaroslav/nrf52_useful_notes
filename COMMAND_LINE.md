@@ -18,20 +18,6 @@
 * ```
   nrfjprog -e -f nrf52
   ```
-  
-## 
-### Flashing the Softdevice via [nrfjprog](https://www.nordicsemi.com/?sc_itemid=%7B56868165-9553-444D-AA57-15BDE1BF6B49%7D)
-
-  ```
-  nrfjprog -f nrf52 --program <Softdevice Name>.hex --chiperase
-  ```
-  
-  Example
-  Пример
-  ```
-  nrfjprog -f nrf52 --program s132_nrf52_6.1.0_softdevice.hex --chiperase
-  ```
-  
 ## 
 ### Flashing the Bootloader via [nrfjprog](https://www.nordicsemi.com/?sc_itemid=%7B56868165-9553-444D-AA57-15BDE1BF6B49%7D)
 ### Прошивка загрузчика при помощи [nrfjprog](https://www.nordicsemi.com/?sc_itemid=%7B56868165-9553-444D-AA57-15BDE1BF6B49%7D)
@@ -41,7 +27,9 @@
   ```
   
   Example
+  
   Пример
+  
   ```
   nrfjprog -f nrf52 --program nrf52840_xxaa_s140.hex -r
   ```
@@ -69,19 +57,24 @@ If you take a look at the makefile of the BLE DFU bootloader examples, you can s
 Если вы посмотрите на makefile примеров загрузчика DFU BLE, вы увидите, что загрузчик сначала прошивает, а начальный адрес загрузчика хранится в разделе MBR. После этого Softdevice прошивается на чип используя nrfjprog и команду erase участка. Проблема здесь в том, что команда Sector erase удалит начальный адрес загрузчика перед прошивкой MBR.
 
 * Flashing the bootloader and softdevice separately
+
   Перепрошивки загрузчика и softdevice отдельно
   
   Example
+  
   Пример
+  
   ```
   nrfjprog -f nrf52 --program s140_nrf52_6.1.0_softdevice.hex --chiperase
   nrfjprog -f nrf52 --program nrf52840_xxaa_s140.hex -r
   ```
   
 * Flashing the bootloader and softdevice through a merge
+
   Перепрошивки загрузчика и softdevice через слияние
   
   Example
+  
   Пример
   ```
   mergehex -m s132_nrf52_6.1.1_softdevice.hex nrf52832_xxaa_s132.hex -o merge.hex
@@ -92,9 +85,11 @@ If you take a look at the makefile of the BLE DFU bootloader examples, you can s
 ### Создание образа микропрограммы с помощью [nrfutil](https://github.com/NordicSemiconductor/pc-nrfutil)
   
 * SDK 15.3 *Using the key to secure DFU*
+
   SDK 15.3 *С использованием ключа для secure DFU* 
   
   Example for Softdevice s132_nrf52_6.1.1
+  
   Пример для Softdevice s132_nrf52_6.1.1
   ```
   nrfutil pkg generate --hw-version 52 --sd-req 0xB7 --application-version 5 --application app.hex --key-file key.pem app_dfu_package.zip
